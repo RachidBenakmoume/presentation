@@ -85,23 +85,6 @@ function handleSwipe() {
   }
 }
 
-// Navigation avec la molette de la souris
-document.addEventListener('wheel', function(event) {
-  event.preventDefault();
-  
-  const delta = event.deltaY;
-  const threshold = 50;
-  
-  if (Math.abs(delta) > threshold) {
-    if (delta > 0 && currentSlide < totalSlides - 1) {
-      // Scroll vers le bas - slide suivant
-      changeSlide(1);
-    } else if (delta < 0 && currentSlide > 0) {
-      // Scroll vers le haut - slide précédent
-      changeSlide(-1);
-    }
-  }
-}, { passive: false });
 
 // Gestion du redimensionnement de la fenêtre
 window.addEventListener('resize', function() {
