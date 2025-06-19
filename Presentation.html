@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Présentation Stage - Consort France</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="presentation-container">
+      <!-- Slide 1: Title -->
+      <div class="slide active title-slide">
+        <img
+          src="img/logo_UBO.png"
+          alt="Logo UBO "
+          style="
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 30px;
+          "
+        />
+
+        <h1>
+          Conception et développement d'une application web de gestion de centre
+          de services
+        </h1>
+        <div class="subtitle">Stage de fin de Licence Informatique</div>
+        <div class="info"><strong>BENAKMOUME Abderrachid</strong></div>
+        <div class="info">Consort France - Toulouse</div>
+        <div class="info">14 avril - 12 juin 2025</div>
+        <div class="info">Encadrant : M. Benoit LACROIX</div>
+        <div class="info">Tuteur UBO : M. Francois MONIN</div>
+      </div>
+
+      <!-- Slide 2: Plan -->
+      <div class="slide">
+        <h2>Plan de la présentation</h2>
+        <div class="plan-container">
+          <div class="plan-item">
+            <strong>1.</strong> Contexte et problématique
+            <small>Entreprise d'accueil et défis identifiés</small>
+          </div>
+          <div class="plan-item">
+            <strong>2.</strong> Solution développée
+            <small>Application web 6 modules + méthodologie</small>
+          </div>
+          <div class="plan-item">
+            <strong>3.</strong> Architecture technique
+            <small>Stack moderne + principes de conception</small>
+          </div>
+          <div class="plan-item">
+            <strong>4.</strong> Réalisations clés
+            <small>Fonctionnalités, qualité et déploiement</small>
+          </div>
+          <div class="plan-item">
+            <strong>5.</strong> Bilan et perspectives
+            <small>Résultats, apprentissages et évolutions futures</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Consort France -->
+      <div class="slide">
+        <h2>Consort France - Entreprise d'accueil</h2>
+        <div class="two-column">
+          <div>
+            <h3>ESN en forte croissance</h3>
+            <ul>
+              <li><strong>2000 collaborateurs</strong> sur 8 agences</li>
+              <li><strong>157 clients grands comptes</strong></li>
+              <li>
+                <strong>6 majeurs du CAC40</strong> parmi les 15 premiers
+                clients
+              </li>
+              <li>
+                <strong>Secteurs :</strong> Services financiers, Télécom,
+                Industries, Énergie
+              </li>
+            </ul>
+
+            <h3>Agence de Toulouse</h3>
+            <ul>
+              <li>Pôle Sud-Ouest avec expertise complète</li>
+              <li>Infrastructure, développement logiciel, testing</li>
+              <li>Gestion de projets et intégration</li>
+              <li>
+                <strong>plusieurs equipes de développeurs </strong>sur différent
+                projets
+              </li>
+            </ul>
+
+            <div class="success-box">
+              <h4>Valeurs et culture</h4>
+              <ul>
+                <li><strong>Agilité</strong> et esprit d'équipe</li>
+                <li><strong>Proximité</strong> avec les clients</li>
+                <li><strong>Innovation</strong> technologique constante</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="image-container">
+              <img
+                src="img/carte-consort.png"
+                alt="Implantations Consort France"
+                class="content-image"
+              />
+              <div class="image-legend">
+                Figure 1: Implantations géographiques de Consort France
+              </div>
+            </div>
+            <div class="highlight-box">
+              <h4>Ma mission</h4>
+              <p>
+                Modernisation du système de gestion interne du centre de
+                services
+              </p>
+              <ul>
+                <li><strong>Durée :</strong> 8 semaines (2 mois)</li>
+
+                <li>
+                  <strong>Autonomie :</strong> Projet personnel complet à partir
+                  de zéro
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Problématique -->
+      <div class="slide">
+        <h2>Problématique initiale</h2>
+        <div class="two-column">
+          <div>
+            <h3>État des lieux : Gestion par fichiers Excel</h3>
+            <div class="image-container">
+              <img
+                src="img/fichiers-excels.png"
+                alt="Schéma fichiers Excel dispersés"
+                class="content-image"
+                style="transform: scale(1.2)"
+              />
+              <div class="image-legend">
+                Figure 2: Problématique - Gestion dispersée par fichiers Excel
+              </div>
+            </div>
+            <ul>
+              <li>
+                <strong>5 fichiers séparés</strong> (clients, demandes,
+                collaborateurs...)
+              </li>
+              <li>Saisies multiples des mêmes données</li>
+              <li>Processus manuels chronophages</li>
+              <li>
+                <strong>Pas de contrôles</strong> de cohérence et validation de
+                données
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="problem-box">
+              <h3>Problèmes identifiés</h3>
+              <ul>
+                <li><strong>Redondance</strong> des données</li>
+                <li><strong>Erreurs</strong> de saisie fréquentes</li>
+                <li>
+                  <strong>Difficultés pour la traçabilité</strong> historique
+                </li>
+                <li><strong>Difficultés de reporting au clients</strong></li>
+                <li><strong>Gestion approximative</strong> du matériel</li>
+                <li><strong>Temps perdu</strong> en manipulations</li>
+              </ul>
+            </div>
+            <div class="highlight-box">
+              <h4>Objectif</h4>
+              <p>
+                <strong>Centraliser et automatiser</strong> la gestion pour
+                gagner en efficacité et fiabilité
+              </p>
+              <ul>
+                <li>Réduire les erreurs de saisie</li>
+                <li>Améliorer la traçabilité</li>
+                <li>Faciliter le reporting</li>
+                <li>Optimiser les processus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Solution développée -->
+      <div class="slide">
+        <h2>Solution développée - Vue d'ensemble</h2>
+        <h3>Application web complète avec 6 modules principaux</h3>
+        <div class="three-column">
+          <div class="tech-item">
+            <h4>1. Clients & Projets</h4>
+            <p>Référentiel centralisé avec historique complet</p>
+            <ul>
+              <li>Gestion complète des clients</li>
+              <li>Suivi des projets en cours</li>
+              <li>Historique des interactions</li>
+            </ul>
+          </div>
+          <div class="tech-item">
+            <h4>2. Demandes</h4>
+            <p>Workflow automatisé de A à Z</p>
+            <ul>
+              <li>Création structurée</li>
+              <li>Suivi temps réel</li>
+              <li>Alertes automatiques</li>
+            </ul>
+          </div>
+          <div class="tech-item">
+            <h4>3. Propositions</h4>
+            <p>Système intelligent avec CV</p>
+            <ul>
+              <li>Matching automatique</li>
+              <li>Gestion des CV</li>
+              <li>Suivi des retours</li>
+            </ul>
+          </div>
+          <div class="tech-item">
+            <h4>4. Collaborateurs</h4>
+            <p>Gestion des affectations et disponibilités</p>
+            <ul>
+              <li>Planning dynamique</li>
+              <li>Compétences détaillées</li>
+              <li>Évaluations SQP</li>
+            </ul>
+          </div>
+          <div class="tech-item">
+            <h4>5. Équipements</h4>
+            <p>Suivi des prêts avec contrôles</p>
+            <ul>
+              <li>Inventaire complet</li>
+              <li>Gestion des prêts</li>
+              <li>Contrôles automatiques</li>
+            </ul>
+          </div>
+          <div class="tech-item">
+            <h4>6. Analytics</h4>
+            <p>Tableau de bord avec KPIs</p>
+            <ul>
+              <li>Métriques en temps réel</li>
+              <li>Rapports automatisés</li>
+              <li>Export Excel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Approche méthodologique</h4>
+          <p>
+            <strong>Agile :</strong> 4 sprints de 15 jours avec livraisons
+            incrémentales
+          </p>
+          <p>
+            Collaboration étroite avec le tuteur, user stories détaillées, et
+            démos régulières pour validation continue des fonctionnalités.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 6: Architecture technique -->
+      <div class="slide">
+        <h2>Architecture technique</h2>
+        <div class="two-column">
+          <div>
+            <h3>Stack technologique moderne</h3>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <strong>Backend</strong><br />
+                Spring Boot 3.4<br />
+                MySQL + JWT
+              </div>
+              <div class="tech-item">
+                <strong>Frontend</strong><br />
+                Angular 19<br />
+                Material + Chart.js
+              </div>
+              <div class="tech-item">
+                <strong>Déploiement</strong><br />
+                Docker + Azure<br />
+                Nginx + HTTPS
+              </div>
+            </div>
+
+            <h3>Principes architecturaux</h3>
+            <ul>
+              <li>✅ <strong>API REST</strong> découplée</li>
+              <li>✅ <strong>Architecture en couches</strong></li>
+              <li>✅ <strong>Modularité</strong> et évolutivité</li>
+              <li>✅ <strong>Sécurité</strong> intégrée (JWT, HTTPS)</li>
+            </ul>
+
+            <div class="success-box">
+              <h4>Choix techniques justifiés</h4>
+              <ul>
+                <li>
+                  • <strong>Spring Boot :</strong> Robustesse et écosystème
+                  riche
+                </li>
+                <li>
+                  • <strong>Angular :</strong> Framework mature et performant
+                </li>
+                <li>• <strong>MySQL :</strong> Base relationnelle fiable</li>
+                <li>• <strong>Docker :</strong> Déploiement reproductible</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="image-container">
+              <img
+                src="img/RestArchitecture.png"
+                alt="Architecture générale"
+                class="content-image"
+              />
+              <div class="image-legend">
+                Figure 3: Architecture REST multicouches de l'application
+              </div>
+            </div>
+            <div class="image-container">
+              <img
+                src="img/technos.png"
+                alt="Stack technologique"
+                class="content-image small"
+              />
+              <div class="image-legend">
+                Figure 4: Stack technologique moderne utilisée
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Workflow des demandes -->
+      <div class="slide">
+        <h2>Fonctionnalités clés - Workflow des demandes</h2>
+        <div class="two-column">
+          <div>
+            <h3>Processus automatisé de A à Z</h3>
+            <div class="workflow-container">
+              <div class="workflow-step">
+                <strong>1. Création</strong> - Formulaire structuré
+                <small>Validation automatique des données</small>
+              </div>
+              <div class="workflow-step">
+                <strong>2. Propositions</strong> - Collaborateurs + CV
+                <small>Matching intelligent selon les compétences</small>
+              </div>
+              <div class="workflow-step">
+                <strong>3. Suivi</strong> - Retours clients
+                <small>Traçabilité complète des échanges</small>
+              </div>
+              <div class="workflow-step">
+                <strong>4. Validation</strong> - Affectation auto
+                <small>Création automatique de l'affectation</small>
+              </div>
+              <div class="workflow-step">
+                <strong>5. Alertes</strong> - Notifications
+                <small>Système d'alertes personnalisables</small>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="image-container">
+              <img
+                src="img/demande.png"
+                alt="Capture dashboard demandes"
+                class="content-image large"
+              />
+              <div class="image-legend">
+                Figure 5: Interface de gestion des demandes clients
+              </div>
+            </div>
+            <div class="success-box">
+              <h4>Bénéfices mesurés</h4>
+              <ul>
+                <li>
+                  <strong>70% de réduction</strong> du temps de traitement
+                </li>
+                <li><strong>Zéro perte</strong> d'information</li>
+                <li><strong>Historique complet</strong> traçable</li>
+                <li><strong>Alertes automatiques</strong></li>
+              </ul>
+              <p class="quote">
+                "Plus besoin de jongler entre plusieurs fichiers Excel !"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Tableau de bord -->
+      <div class="slide">
+        <h2>Tableau de bord et analytique</h2>
+        <div class="dashboard-layout">
+          <div class="dashboard-info">
+            <h3>Vue d'ensemble en temps réel</h3>
+            <ul>
+              <li>
+                <strong>KPIs clés :</strong> taux de satisfaction, demandes
+                traitées, délais moyens
+              </li>
+              <li>
+                <strong>Graphiques interactifs</strong> (camemberts,
+                histogrammes, courbes)
+              </li>
+              <li><strong>Analyses temporelles</strong> et comparaisons</li>
+              <li><strong>Export Excel</strong> pour reporting client</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h4>Impact opérationnel</h4>
+              <p>Prise de décision basée sur les données en temps réel</p>
+              <ul>
+                <li><strong>Visibilité immédiate</strong> sur l'activité</li>
+                <li>
+                  <strong>Identification rapide</strong> des goulots
+                  d'étranglement
+                </li>
+                <li><strong>Optimisation continue</strong> des processus</li>
+              </ul>
+            </div>
+
+            <div class="success-box">
+              <h4>Métriques clés suivies</h4>
+              <ul>
+                <li>
+                  • Temps moyen de traitement : <strong>3,2 jours</strong>
+                </li>
+                <li>• Taux de satisfaction client : <strong>94%</strong></li>
+                <li>• Demandes traitées/mois : <strong>127</strong></li>
+                <li>
+                  • Taux d'acceptation propositions : <strong>78%</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="dashboard-image">
+            <div class="dashboard-image">
+              <div class="image-container">
+                <img
+                  src="img/statistiques.png"
+                  alt="Tableau de bord"
+                  class="content-image dashboard"
+                  style="
+                    width: 150%;
+                    height: 550;
+                    margin-top: 100px;
+                    margin-left: 20%;
+                    margin-bottom: 70px;
+                    z-index: 10;
+                    transform: scale(1.6);
+                  "
+                />
+                <div
+                  class="image-legend"
+                  style="z-index: 20; position: relative"
+                >
+                  Figure 6: Tableau de bord analytique avec KPIs en temps réel
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Qualité et tests -->
+      <div class="slide">
+        <h2>Qualité et tests</h2>
+        <div class="two-column">
+          <div>
+            <h3>Approche qualité rigoureuse</h3>
+            <ul>
+              <li><strong>Tests unitaires :</strong> JUnit 5 + Mockito</li>
+              <li><strong>Tests de mutation</strong> avec PIT</li>
+              <li><strong>Analyse statique</strong> SonarQube</li>
+              <li><strong>Documentation</strong> UML complète</li>
+              <li><strong>Architecture</strong> documentée et modélisée</li>
+            </ul>
+
+            <div class="success-box">
+              <h4>Résultat</h4>
+              <p>
+                <strong>Application stable et maintenable</strong> avec une base
+                solide pour les évolutions futures
+              </p>
+              <ul>
+                <li>• <strong>Code propre</strong> et bien structuré</li>
+                <li>• <strong>Tests automatisés</strong> pour la régression</li>
+                <li>• <strong>Documentation</strong> technique complète</li>
+              </ul>
+            </div>
+
+            <div class="highlight-box">
+              <h4>Outils de qualité utilisés</h4>
+              <ul>
+                <li>• <strong>Maven</strong> : Gestion des dépendances</li>
+                <li>• <strong>JaCoCo</strong> : Couverture de code</li>
+                <li>• <strong>PIT</strong> : Tests de mutation</li>
+                <li>• <strong>SonarQube</strong> : Analyse statique</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="metrics">
+              <div class="metric-item">
+                <div class="metric-number">81%</div>
+                <div>Couverture tests</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-number">80%</div>
+                <div>Score mutation</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-number">0</div>
+                <div>Bug critique</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-number">0</div>
+                <div>Vulnérabilité</div>
+              </div>
+            </div>
+            <div class="image-container">
+              <img
+                src="img/sonarqube-score.png"
+                alt="SonarQube Dashboard"
+                class="content-image large"
+              />
+              <div class="image-legend">
+                Figure 7: Résultats de l'analyse qualité SonarQube
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10: Déploiement -->
+      <div class="slide">
+        <h2>Déploiement et production</h2>
+        <div class="two-column">
+          <div>
+            <h3>Infrastructure Azure</h3>
+            <ul>
+              <li><strong>VM dédiée</strong> avec conteneurs Docker</li>
+              <li><strong>Base de données</strong> MySQL distante (SSL)</li>
+              <li><strong>Nginx</strong> reverse proxy + HTTPS</li>
+              <li><strong>Script automatisé</strong> de déploiement</li>
+              <li><strong>Monitoring</strong> intégré (Health checks)</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h4>Mise en production réussie</h4>
+              <ul>
+                <li>
+                  ✅ Application <strong>utilisée quotidiennement</strong>
+                </li>
+                <li>✅ Déploiement en <strong>moins de 3 minutes</strong></li>
+                <li>✅ <strong>Haute disponibilité</strong> garantie</li>
+              </ul>
+            </div>
+
+            <div class="success-box">
+              <h4>Caractéristiques techniques</h4>
+              <ul>
+                <li>• <strong>VM :</strong> 2 vCPUs, 4GB RAM, 126GB SSD</li>
+                <li>• <strong>Sécurité :</strong> HTTPS + certificats SSL</li>
+                <li>
+                  • <strong>Performance :</strong> < 200ms temps de réponse
+                </li>
+                <li>• <strong>Disponibilité :</strong> 99.5% uptime</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="image-container">
+              <img
+                src="img/stackdeploiement.png"
+                alt="Schéma architecture déploiement"
+                class="content-image"
+                style="width: 150%; margin-left: -25%"
+              />
+              <div class="image-legend">
+                Figure 8: Architecture de déploiement sur Azure Cloud
+              </div>
+            </div>
+
+            <div class="image-container">
+              <img
+                src="img/script-deploiement.png"
+                alt="Capture script déploiement"
+                class="content-image"
+              />
+              <div class="image-legend">
+                Figure 9: Script automatisé de déploiement Docker
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 11: Résultats et impact -->
+      <div class="slide">
+        <h2>Résultats et impact</h2>
+        <div class="two-column">
+          <div>
+            <h3>Gains mesurables obtenus</h3>
+            <div class="benefits">
+              <div class="benefit-item">
+                <strong>Centralisation</strong><br />
+                Toutes les données unifiées<br />
+                <small>Fini les fichiers Excel dispersés</small>
+              </div>
+              <div class="benefit-item">
+                <strong>70% de gain de temps</strong><br />
+                Sur le traitement des demandes<br />
+                <small>De 2 heures à 30 minutes par demande</small>
+              </div>
+              <div class="benefit-item">
+                <strong>Zéro perte</strong><br />
+                D'information garantie<br />
+                <small>Traçabilité complète des actions</small>
+              </div>
+              <div class="benefit-item">
+                <strong>Traçabilité complète</strong><br />
+                De toutes les actions<br />
+                <small>Audit trail automatique</small>
+              </div>
+              <div class="benefit-item">
+                <strong>Tableau de bord</strong><br />
+                En temps réel<br />
+                <small>KPIs actualisés automatiquement</small>
+              </div>
+              <div class="benefit-item">
+                <strong>Automatisation</strong><br />
+                Des workflows métier<br />
+                <small>Notifications et alertes automatiques</small>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="success-box">
+              <h4>Satisfaction utilisateur</h4>
+              <p>
+                <strong>Application adoptée et appréciée</strong> par l'équipe
+                du centre de services
+              </p>
+              <p>Retours positifs sur l'ergonomie et l'efficacité</p>
+            </div>
+
+            <div class="highlight-box">
+              <h4>Témoignage utilisateur</h4>
+              <p class="quote">
+                "L'application a révolutionné notre façon de travailler. Plus de
+                fichiers Excel à jongler, tout est centralisé et automatisé. Un
+                vrai gain de temps au quotidien !"
+              </p>
+              <p class="quote-author">- Équipe Centre de Services Toulouse</p>
+            </div>
+
+            <div class="info-box">
+              <h4>Métriques de réussite</h4>
+              <ul>
+                <li><strong>100%</strong> des demandes digitalisées</li>
+                <li>
+                  <strong>0</strong> perte de données depuis le déploiement
+                </li>
+                <li>
+                  <strong>15 min</strong> de formation suffisent pour maîtriser
+                  l'outil
+                </li>
+                <li>
+                  <strong>99.5%</strong> de disponibilité de l'application
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 12: Compétences développées -->
+      <div class="slide">
+        <h2>Compétences développées</h2>
+        <div class="three-column">
+          <div>
+            <h3>Techniques</h3>
+            <div class="tech-item">
+              <ul>
+                <li><strong>Full-stack :</strong> Spring Boot + Angular</li>
+                <li><strong>Architecture :</strong> conception API REST</li>
+                <li><strong>DevOps :</strong> Docker, déploiement cloud</li>
+                <li><strong>Qualité :</strong> tests, analyse statique</li>
+                <li><strong>Sécurité :</strong> JWT, HTTPS, filtrage</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>Méthodologiques</h3>
+            <div class="tech-item">
+              <ul>
+                <li><strong>Gestion de projet</strong> complète</li>
+                <li><strong>Méthodes agiles</strong> en autonomie</li>
+                <li><strong>Analyse des besoins</strong> métier</li>
+                <li><strong>Documentation</strong> technique</li>
+                <li><strong>Tests</strong> et validation</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>Relationnelles</h3>
+            <div class="tech-item">
+              <ul>
+                <li><strong>Communication</strong> technique</li>
+                <li><strong>Autonomie</strong> et initiative</li>
+                <li><strong>Adaptabilité</strong> entreprise</li>
+                <li><strong>Présentation</strong> du travail</li>
+                <li><strong>Gestion du temps</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skills-comparison">
+          <div class="comparison-container" id="skillsContainer">
+            <div class="comparison-wrapper">
+              <div class="side avant">
+                <div class="side-title">AVANT</div>
+                <div class="skills-list">
+                  <div>Spring Boot: Débutant</div>
+                  <div>Angular: Notions</div>
+                  <div>DevOps: Théorie</div>
+                  <div>Tests: Basique</div>
+                  <div>Architecture: Concepts</div>
+                  <div>Gestion projet: Apprenti</div>
+                </div>
+              </div>
+
+              <div class="side apres">
+                <div class="side-title">APRÈS</div>
+                <div class="skills-list">
+                  <div>Spring Boot: Maîtrisé</div>
+                  <div>Angular: Avancé</div>
+                  <div>DevOps: Pratique</div>
+                  <div>Tests: Rigoureux</div>
+                  <div>Architecture: Expérimenté</div>
+                  <div>Gestion projet: Autonome</div>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+            </div>
+
+            <div class="button-controls">
+              <button class="control-btn" onclick="showAvant()">AVANT</button>
+              <button class="control-btn" onclick="showApres()">APRÈS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 13: Perspectives -->
+      <div class="slide">
+        <h2>Perspectives d'évolution</h2>
+        <div class="two-column">
+          <div>
+            <h3 style="margin-bottom: -250px">Améliorations possibles</h3>
+            <div class="perspectives-container" style="margin-top: -150px">
+              <div class="perspective-item">
+                <strong>Espace client dédié</strong><br />
+                <small>Suivi en temps réel de leurs projets et demandes</small
+                ><br />
+                <small class="details"
+                  >• Portal self-service • Notifications push • Historique
+                  complet</small
+                >
+              </div>
+              <div class="perspective-item">
+                <strong>Module collaborateur</strong><br />
+                <small>Interface personnalisée pour chaque consultant</small
+                ><br />
+                <small class="details"
+                  >• Planning personnel • Compétences • Évaluations</small
+                >
+              </div>
+              <div class="perspective-item">
+                <strong>Intelligence artificielle</strong><br />
+                <small>Analyse prédictive et recommandations</small><br />
+                <small class="details"
+                  >• Matching automatique • Prévision de charge •
+                  Optimisation</small
+                >
+              </div>
+              <div class="perspective-item">
+                <strong>Application mobile</strong><br />
+                <small>Version native pour smartphone/tablette</small><br />
+                <small class="details"
+                  >• React Native • Notifications • Mode offline</small
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="image-container">
+              <img
+                src="img/futureupgrades.png"
+                alt="Mockup futurs développements"
+                class="content-image"
+              />
+              <div class="image-legend">
+                Figure 10: évolutions futures envisagées
+              </div>
+            </div>
+            <div class="highlight-box">
+              <h4>Base solide pour l'avenir</h4>
+              <p>
+                Architecture modulaire permettant une
+                <strong>évolution facile</strong> et l'ajout de nouvelles
+                fonctionnalités
+              </p>
+              <p>
+                Documentation complète pour
+                <strong>faciliter la maintenance</strong>
+              </p>
+            </div>
+
+            <div class="success-box">
+              <h4>Roadmap technique</h4>
+              <ul>
+                <li>
+                  • <strong>Q3 2025 :</strong> API publique pour intégrations
+                </li>
+                <li>
+                  • <strong>Q4 2025 :</strong> Module IA et analytics avancées
+                </li>
+                <li>• <strong>Q1 2026 :</strong> Application mobile native</li>
+                <li>• <strong>Q2 2026 :</strong> Espace client self-service</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 14: Bilan personnel -->
+      <div class="slide">
+        <h2>Bilan personnel</h2>
+        <div class="two-column">
+          <div>
+            <h3>Une expérience enrichissante</h3>
+            <ul>
+              <li>
+                <strong>Vision concrète</strong> du métier de développeur en
+                entreprise
+              </li>
+              <li>
+                <strong>Projet réel</strong> avec impact opérationnel immédiat
+              </li>
+              <li>
+                <strong>Autonomie complète</strong> sur un projet de A à Z
+              </li>
+              <li>
+                <strong>Responsabilités</strong> et prise de décisions
+                techniques
+              </li>
+              <li>
+                <strong>Confirmation</strong> de mes aspirations
+                professionnelles
+              </li>
+            </ul>
+
+            <div class="success-box">
+              <h4>Mission réussie !</h4>
+              <p>
+                <strong>Application en production</strong> et utilisée
+                quotidiennement par l'équipe
+              </p>
+              <ul>
+                <li>• Déployée sur Azure Cloud</li>
+                <li>• 8 semaines de développement</li>
+                <li>• 0 bug critique en production</li>
+                <li>• Adoption immédiate par les utilisateurs</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="highlight-box">
+              <h4>Perspectives personnelles</h4>
+              <p>
+                Cette expérience confirme mon orientation vers le
+                <strong>développement d'applications métier</strong> et me
+                prépare pour la suite de mes études en Master
+              </p>
+              <ul>
+                <li>
+                  • <strong>Approfondissement</strong> en architecture
+                  logicielle
+                </li>
+                <li>
+                  • <strong>Spécialisation</strong> en développement full-stack
+                </li>
+                <li>
+                  • <strong>Intérêt confirmé</strong> pour les projets
+                  d'entreprise
+                </li>
+              </ul>
+            </div>
+
+            <div class="info-box">
+              <h4>Apprentissages clés</h4>
+              <ul>
+                <li>
+                  <strong>Gestion de projet</strong> en autonomie complète
+                </li>
+                <li>
+                  <strong>Communication</strong> avec les parties prenantes
+                </li>
+                <li>
+                  <strong>Résolution de problèmes</strong> techniques complexes
+                </li>
+                <li>
+                  <strong>Respect des délais</strong> et qualité du livrable
+                </li>
+              </ul>
+            </div>
+
+            <div class="success-box">
+              <h4>Chiffres du stage</h4>
+              <ul>
+                <li>• <strong>2500+</strong> lignes de code backend</li>
+                <li>• <strong>1800+</strong> lignes de code frontend</li>
+                <li>• <strong>15</strong> user stories implémentées</li>
+                <li>• <strong>42</strong> tests unitaires écrits</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 15: Conclusion -->
+      <div class="slide">
+        <h2>Questions & Démonstration</h2>
+        <div class="conclusion-container">
+          <h1 class="conclusion-title">Merci pour votre attention !</h1>
+          <div class="conclusion-subtitle">
+            <strong>Questions ?</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">
+        ◀ Précédent
+      </button>
+      <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">
+        Suivant ▶
+      </button>
+    </div>
+
+    <!-- Compteur de slides -->
+    <div class="slide-counter">
+      <span id="slideCounter">1 / 15</span>
+    </div>
+
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-prev modal-nav">&#8249;</div>
+        <div class="modal-next modal-nav">&#8250;</div>
+        <img class="modal-image" id="modalImg" />
+        <div class="modal-caption" id="modalCaption"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
